@@ -3,7 +3,9 @@
 <div class="articles-grid">
     <?php foreach ($articles as $article): ?>
         <div class="card">
-            <span class="badge"><?= htmlspecialchars($article['categorie_libelle']) ?></span>
+            <a href="index.php?controller=article&action=byCategorie&id=<?= $article['categorie'] ?>" class="badge">
+                <?= htmlspecialchars($article['categorie_libelle']) ?>
+            </a>
             <h3>
                 <a href="index.php?controller=article&action=show&id=<?= $article['id'] ?>">
                     <?= htmlspecialchars($article['titre']) ?>
