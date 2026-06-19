@@ -22,7 +22,7 @@
                     echo '
                     <article class="card">
                         <span class="badge">' . $article['libelle'] . '</span>
-                        <h3>' . $article['titre'] . '</h3>
+                        <h3><a href="article.php?id=' . $article['id'] . '">' . $article['titre'] . '</a></h3>
                         <p>' . substr($article['contenu'], 0, 150) . '...</p>
                         <small>' . date('d/m/Y', strtotime($article['dateCreation'])) . '</small>
                     </article>';
@@ -30,8 +30,10 @@
             } else {
                 echo '<p>Aucun article dans cette catégorie.</p>';
             }
+
+            echo '<a href="index.php" class="btn-back">← Retour</a>';
         } else {
-            echo '<p>Catégorie introuvable.</p>';
+            echo '<p>Catégorie introuvable.</p><a href="index.php" class="btn-back">← Retour</a>';
         }
     ?>
 </section>

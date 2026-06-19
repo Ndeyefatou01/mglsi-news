@@ -9,8 +9,8 @@
         foreach ($articles as $article) {
             echo '
             <article class="card">
-                <span class="badge">' . $article['libelle'] . '</span>
-                <h3>' . $article['titre'] . '</h3>
+                <a href="categorie.php?id=' . $article['categorie'] . '" class="badge">' . $article['libelle'] . '</a>
+                <h3><a href="article.php?id=' . $article['id'] . '">' . $article['titre'] . '</a></h3>
                 <p>' . substr($article['contenu'], 0, 150) . '...</p>
                 <small>' . date('d/m/Y', strtotime($article['dateCreation'])) . '</small>
             </article>';
